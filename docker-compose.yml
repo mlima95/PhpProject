@@ -7,12 +7,15 @@ services:
         image: mariadb:10.5
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_USER: devuser
-            MYSQL_PASSWORD: devpass
+            MYSQL_DATABASE: test_db
         ports:
         - "9906:3306"
     phpmyadmin:
         image: phpmyadmin:apache
+        environment:
+            PMA_HOST: database
+            PMA_USER: root
+            PMA_PASSWORD: root
         ports:
             - "3000:80"
         depends_on:
