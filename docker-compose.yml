@@ -7,7 +7,6 @@ services:
         image: mariadb:10.5
         environment:
             MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: test_db
         ports:
         - "9906:3306"
     phpmyadmin:
